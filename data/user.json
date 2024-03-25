@@ -6,7 +6,6 @@
     "profile_picture": "https://example.com/profile_picture.jpg",
     "date_of_birth": "1990-01-01",
     "location": "New York, USA",
-    "preferred_categories": ["politics", "technology", "sports"],
     "reading_history": [],
     "saved_articles": [],
     "subscription_status": "active",
