@@ -1,0 +1,27 @@
+{
+    "user_id": "123456789",
+    "username": "example_user",
+    "email": "user@example.com",
+    "password_hash": "hashed_password_here",
+    "profile_picture": "https://example.com/profile_picture.jpg",
+    "date_of_birth": "1990-01-01",
+    "location": "New York, USA",
+    "preferred_categories": ["politics", "technology", "sports"],
+    "reading_history": [],
+    "saved_articles": [],
+    "subscription_status": "active",
+    "notification_preferences": {
+      "email": true,
+      "push_notifications": true
+    },
+    "user_preferences": {
+        "Politics": 4,
+        "Technology": 3,
+        "Business": 5,
+        "Sports": 2,
+        "Entertainment": 4
+    },    
+    "preferred_sources": ["source1", "source2"],
+    "feedback_history": []
+  }
+  
