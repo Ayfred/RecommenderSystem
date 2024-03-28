@@ -9,16 +9,17 @@
 
     "user_history" : {
       "articles": [
-          {   
+            {   
               "title": "Study Reveals Surprising Link Between Coffee Consumption and Memory Enhancement",
               "category": "Life"
-              },
-              {"title": "Groundbreaking AI Breakthrough: Self-Driving Cars Master Urban Navigation Without Human Assistance",
-              "category": "Technology"
-              }
+            },
+            {
+                "title": "Groundbreaking AI Breakthrough: Self-Driving Cars Master Urban Navigation Without Human Assistance",
+                "category": "Technology"
+            }
            
-      ]
-  },
+        ]
+    },
 
     "user_keywords" : {
       "google": 0,
@@ -28,9 +29,11 @@
       "baguette": 0,
       "country": 0,
       "money": 0,
-      "apple": 5,
-      "fruit": 5
-  },  
+      "robbery": 0,
+      "apple": 0,
+      "fruit": 0,
+      "cow": 5
+    },  
 
   "user_categories" : {
       "Markets": 2,
@@ -49,7 +52,7 @@
       "QuickTakes": 1,
       "Opinion/View": 0,
       "China":0
-  }
+    }
 
-  }
+}
   
