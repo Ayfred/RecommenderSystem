@@ -17,121 +17,241 @@
         ]
     },
     "user_keywords": {
-        "study": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "exploring": {
+            "score": 1.4400000000000002,
+            "last_modified": 1711820408.861159
         },
-        "reveals": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "wonders": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "surprising": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "deep": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "link": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "sea": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "coffee": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "creatures": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "consumption": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "dive": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "memory": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "abyss": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "enhancement": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "mysteries": {
+            "score": 0.8,
+            "last_modified": 1711820405.757194
         },
-        "groundbreaking": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "universe": {
+            "score": 0.8,
+            "last_modified": 1711820405.757194
         },
-        "ai": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "journey": {
+            "score": 0.8,
+            "last_modified": 1711820405.757194
         },
-        "breakthrough": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "space": {
+            "score": 0.8,
+            "last_modified": 1711820405.757194
         },
-        "self": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "future": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "driving": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "renewable": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "cars": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "energy": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "master": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "innovations": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "urban": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "shaping": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "navigation": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "sustainable": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "without": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "world": {
+            "score": 0.8,
+            "last_modified": 1711820405.149862
         },
-        "human": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "understanding": {
+            "score": 1.4400000000000002,
+            "last_modified": 1711820405.020253
         },
-        "assistance": {
-            "score": 0.11000000000000001,
-            "last_modified": 1711818440.937753
+        "climate": {
+            "score": 0.8,
+            "last_modified": 1711820405.020253
         },
-        "cow": {
-            "score": 5,
-            "last_modified": 1648700000
+        "change": {
+            "score": 0.8,
+            "last_modified": 1711820405.020253
         },
-        "google": {
-            "score": 0,
-            "last_modified": 1648700000
+        "impact": {
+            "score": 0.8,
+            "last_modified": 1711820405.020253
         },
-        "france": {
-            "score": 0,
-            "last_modified": 1648700000
+        "causes": {
+            "score": 0.8,
+            "last_modified": 1711820405.020253
         },
-        "italy": {
-            "score": 0,
-            "last_modified": 1648700000
+        "solutions": {
+            "score": 0.8,
+            "last_modified": 1711820405.020253
         },
-        "culture": {
-            "score": 0,
-            "last_modified": 1648700000
+        "rise": {
+            "score": 0.8,
+            "last_modified": 1711820404.893028
         },
-        "baguette": {
-            "score": 0,
-            "last_modified": 1648700000
+        "plant": {
+            "score": 0.8,
+            "last_modified": 1711820404.893028
         },
-        "country": {
-            "score": 0,
-            "last_modified": 1648700000
+        "based": {
+            "score": 0.8,
+            "last_modified": 1711820404.893028
         },
-        "money": {
-            "score": 0,
-            "last_modified": 1648700000
+        "diets": {
+            "score": 0.8,
+            "last_modified": 1711820404.893028
         },
-        "robbery": {
-            "score": 0,
-            "last_modified": 1648700000
+        "vegan": {
+            "score": 0.8,
+            "last_modified": 1711820404.893028
+        },
+        "lifestyle": {
+            "score": 0.8,
+            "last_modified": 1711820404.893028
+        },
+        "art": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
+        },
+        "photography": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
+        },
+        "capturing": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
+        },
+        "moments": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
+        },
+        "last": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
+        },
+        "lifetime": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
+        },
+        "benefits": {
+            "score": 0.8,
+            "last_modified": 1711820404.015541
+        },
+        "meditation": {
+            "score": 0.8,
+            "last_modified": 1711820404.015541
+        },
+        "improve": {
+            "score": 0.8,
+            "last_modified": 1711820404.015541
+        },
+        "mental": {
+            "score": 0.8,
+            "last_modified": 1711820404.015541
+        },
+        "well": {
+            "score": 0.8,
+            "last_modified": 1711820404.015541
+        },
+        "being": {
+            "score": 0.8,
+            "last_modified": 1711820404.015541
+        },
+        "thinking": {
+            "score": 1.4400000000000002,
+            "last_modified": 1711820403.229797
+        },
+        "unlocking": {
+            "score": 0.8,
+            "last_modified": 1711820403.229797
+        },
+        "creativity": {
+            "score": 0.8,
+            "last_modified": 1711820403.229797
+        },
+        "techniques": {
+            "score": 0.8,
+            "last_modified": 1711820403.229797
+        },
+        "boost": {
+            "score": 0.8,
+            "last_modified": 1711820403.229797
+        },
+        "innovative": {
+            "score": 0.8,
+            "last_modified": 1711820403.229797
+        },
+        "power": {
+            "score": 0.8,
+            "last_modified": 1711820402.950997
+        },
+        "positive": {
+            "score": 0.8,
+            "last_modified": 1711820402.950997
+        },
+        "transforming": {
+            "score": 0.8,
+            "last_modified": 1711820402.950997
+        },
+        "mindset": {
+            "score": 0.8,
+            "last_modified": 1711820402.950997
+        },
+        "success": {
+            "score": 0.8,
+            "last_modified": 1711820402.950997
+        },
+        "delving": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
+        },
+        "ancient": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
+        },
+        "history": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
+        },
+        "unraveling": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
+        },
+        "secrets": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
+        },
+        "past": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
         },
         "apple": {
             "score": 0,
@@ -143,57 +263,37 @@
         }
     },
     "user_categories": {
-        "Life": {
-            "score": 0.12100000000000002,
-            "last_modified": 1711818440.937753
+        "Nature": {
+            "score": 0.8,
+            "last_modified": 1711820408.861159
         },
-        "Technology": {
-            "score": 0.0,
-            "last_modified": 1711818440.937753
+        "Science": {
+            "score": 1.4400000000000002,
+            "last_modified": 1711820405.757194
         },
-        "Businessweek": {
-            "score": 3,
-            "last_modified": 1648700000
+        "Environment": {
+            "score": 0.8,
+            "last_modified": 1711820405.020253
         },
-        "Mutual Funds": {
-            "score": 3,
-            "last_modified": 1648700000
+        "Health": {
+            "score": 1.4400000000000002,
+            "last_modified": 1711820404.893028
         },
-        "Global Economics": {
-            "score": 3,
-            "last_modified": 1648700000
+        "Art": {
+            "score": 0.8,
+            "last_modified": 1711820404.622761
         },
-        "Markets": {
-            "score": 2,
-            "last_modified": 1648700000
+        "Education": {
+            "score": 0.8,
+            "last_modified": 1711820403.229797
         },
-        "Research Reports": {
-            "score": 2,
-            "last_modified": 1648700000
+        "Self-Help": {
+            "score": 0.8,
+            "last_modified": 1711820402.950997
         },
-        "BQ Blue Exclusive": {
-            "score": 2,
-            "last_modified": 1648700000
-        },
-        "Pursuits": {
-            "score": 2,
-            "last_modified": 1648700000
-        },
-        "Politics": {
-            "score": 2,
-            "last_modified": 1648700000
-        },
-        "OnWeb": {
-            "score": 1,
-            "last_modified": 1648700000
-        },
-        "GST": {
-            "score": 1,
-            "last_modified": 1648700000
-        },
-        "QuickTakes": {
-            "score": 1,
-            "last_modified": 1648700000
+        "History": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
         },
         "Business": {
             "score": 0,
@@ -202,14 +302,49 @@
         "Opinion/Gadfly": {
             "score": 0,
             "last_modified": 1648700000
-        },
-        "Opinion/View": {
-            "score": 0,
-            "last_modified": 1648700000
-        },
-        "China": {
-            "score": 0,
-            "last_modified": 1648700000
         }
-    }
+    },
+    "liked_articles": [
+        {
+            "title": "Delving into Ancient History: Unraveling the Secrets of the Past",
+            "category": "History"
+        },
+        {
+            "title": "The Power of Positive Thinking: Transforming Your Mindset for Success",
+            "category": "Self-Help"
+        },
+        {
+            "title": "Unlocking Creativity: Techniques to Boost Your Innovative Thinking",
+            "category": "Education"
+        },
+        {
+            "title": "The Benefits of Meditation: How It Can Improve Your Mental Well-being",
+            "category": "Health"
+        },
+        {
+            "title": "The Art of Photography: Capturing Moments That Last a Lifetime",
+            "category": "Art"
+        },
+        {
+            "title": "The Rise of Plant-Based Diets: Understanding the Vegan Lifestyle",
+            "category": "Health"
+        },
+        {
+            "title": "Understanding Climate Change: Impact, Causes, and Solutions",
+            "category": "Environment"
+        },
+        {
+            "title": "The Future of Renewable Energy: Innovations Shaping a Sustainable World",
+            "category": "Science"
+        },
+        {
+            "title": "Exploring the Mysteries of the Universe: A Journey through Space",
+            "category": "Science"
+        },
+        {
+            "title": "Exploring the Wonders of Deep Sea Creatures: A Dive into the Abyss",
+            "category": "Nature"
+        }
+    ],
+    "disliked_articles": []
 }
