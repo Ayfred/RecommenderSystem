@@ -1,0 +1,58 @@
+{
+    "user_id": "123456789",
+    "username": "example_user",
+    "email": "user@example.com",
+    "password_hash": "hashed_password_here",
+
+    "profile_picture": "https://example.com/profile_picture.jpg",    
+
+
+    "user_history" : {
+      "articles": [
+            {   
+              "title": "Study Reveals Surprising Link Between Coffee Consumption and Memory Enhancement",
+              "category": "Life"
+            },
+            {
+                "title": "Groundbreaking AI Breakthrough: Self-Driving Cars Master Urban Navigation Without Human Assistance",
+                "category": "Technology"
+            }
+           
+        ]
+    },
+
+    "user_keywords" : {
+      "google": 0,
+      "france": 0,
+      "italy": 0,
+      "culture": 0,
+      "baguette": 0,
+      "country": 0,
+      "money": 0,
+      "robbery": 0,
+      "apple": 0,
+      "fruit": 0,
+      "cow": 5
+    },  
+
+  "user_categories" : {
+      "Markets": 2,
+      "Business": 0,
+      "Research Reports": 2,
+      "Businessweek": 3,
+      "OnWeb": 1,
+      "Opinion/Gadfly": 0,
+      "Mutual Funds": 3,
+      "BQ Blue Exclusive": 2,
+      "Global Economics": 3,
+      "GST": 1,
+      "Pursuits": 2,
+      "Politics": 2,
+      "Technology": 0,
+      "QuickTakes": 1,
+      "Opinion/View": 0,
+      "China":0
+    }
+
+}
+  
