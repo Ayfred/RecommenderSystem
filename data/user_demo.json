@@ -9,33 +9,65 @@
             {
                 "title": "Study Reveals Surprising Link Between Coffee Consumption and Memory Enhancement",
                 "category": "Life"
+            },
+            {
+                "title": "Groundbreaking AI Breakthrough: Self-Driving Cars Master Urban Navigation Without Human Assistance",
+                "category": "Technology"
             }
         ]
     },
     "user_keywords": {
+        "biodiversity": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
+        "hotspots": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
+        "protecting": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
+        "earth": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
+        "s": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
+        "precious": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
+        "ecosystems": {
+            "score": 0.5,
+            "last_modified": 1712051489.255022
+        },
         "advancements": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+            "score": 2.5,
+            "last_modified": 1712051485.787112
         },
         "artificial": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+            "score": 2.5,
+            "last_modified": 1712051485.787112
         },
         "intelligence": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+            "score": 2.5,
+            "last_modified": 1712051485.787112
         },
         "shaping": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+            "score": 2.5,
+            "last_modified": 1712051485.787112
         },
         "future": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+            "score": 2.5,
+            "last_modified": 1712051485.787112
         },
         "technology": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+            "score": 2.5,
+            "last_modified": 1712051485.787112
         },
         "exploring": {
             "score": 0.8,
@@ -71,21 +103,21 @@
         }
     },
     "user_categories": {
-        "Science": {
-            "score": 0.8,
-            "last_modified": 1712051013.130931
+        "Environment": {
+            "score": 0.28800000000000003,
+            "last_modified": 1712051489.255022
         },
-        "OnWeb": {
+        "Science": {
+            "score": 2.5,
+            "last_modified": 1712051485.787112
+        },
+        "Education": {
             "score": 2.5920000000000005,
             "last_modified": 1712050144.041242
         },
         "Art": {
             "score": 1.4400000000000002,
             "last_modified": 1712050058.081056
-        },
-        "Environment": {
-            "score": 1.4400000000000002,
-            "last_modified": 1712050036.192425
         },
         "Business": {
             "score": 0.0,
@@ -106,6 +138,14 @@
         "Self-Help": {
             "score": 0.8,
             "last_modified": 1711820402.950997
+        },
+        "History": {
+            "score": 0.8,
+            "last_modified": 1711820401.579802
+        },
+        "Opinion/Gadfly": {
+            "score": 0,
+            "last_modified": 1648700000
         }
     },
     "liked_articles": [
@@ -118,13 +158,18 @@
             "category": "Health"
         },
         {
-            "title": "Exploring the Philosophy of Existentialism: Finding Meaning in a Chaotic World",
-            "category": "Education"
+            "title": "The Evolution of Language: Tracing the Origins and Development of Communication",
+            "category": "Science"
         },
         {
             "title": "Advancements in Artificial Intelligence: Shaping the Future of Technology",
             "category": "Science"
         }
     ],
-    "disliked_articles": []
+    "disliked_articles": [
+        {
+            "title": "Biodiversity Hotspots: Protecting Earth's Most Precious Ecosystems",
+            "category": "Environment"
+        }
+    ]
 }
