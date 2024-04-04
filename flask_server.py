@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from flask import Flask, request, jsonify
 from firebase_admin import firestore
+import recommender
 
 cred = credentials.Certificate("private/cs7is5-teamhera-firebase-adminsdk-sa9b4-8a9cc23951.json")
 firebase_admin.initialize_app(cred)
@@ -25,6 +26,13 @@ def get_users():
         return jsonify(data)
 
 
+def recommend_news_based_on_keywords(keywords, data):
+
+    recommender = recommender(data)
+    vector = recommender.load_glove_model()
+
+    return recommender.recommend_news_based_on_keywords(keywords, data)
+
 
 
 # Add data to database
@@ -39,3 +47,5 @@ def add_data():
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=5000)
     print(get_data())
+
+    recommend_news_based_on_keywords(get_data())
