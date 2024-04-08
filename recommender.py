@@ -15,6 +15,9 @@ class Recommender:
         self.user_keywords = user['user_keywords']
         self.user_categories = user['user_categories']
 
+        print("Loading GloVe model...")
+        self.vectors = self.load_glove_model(path='gloves/converted_vectors300.txt')
+        print("GloVe model loaded.")
 
     def delete_missing_values(self):
         # Check for NaN, missing, or NaT values
@@ -76,17 +79,17 @@ class Recommender:
         self.data['description'] = self.data['description'].apply(remove_punctuation)
         self.data['description'] = self.data['description'].apply(remove_digits)
     
-    def load_glove_model(path='gloves/converted_vectors300.txt'):
-        return KeyedVectors.load_word2vec_format(path, binary=False)
+    def load_glove_model(self, path='gloves/converted_vectors300.txt'):
+        self.vectors = KeyedVectors.load_word2vec_format(path, binary=False)
 
-    def get_average_word2vec(tokens_list, vector, generate_missing=False, k=300):
+    def get_average_word2vec(self, tokens_list, generate_missing=False, k=300):
         if len(tokens_list) < 1:
             return np.zeros(k)
         
         vectorized = []
         for word in tokens_list:
-            if word in vector:
-                vectorized.append(vector[word])
+            if word in self.vectors:
+                vectorized.append(self.vectors[word])
             elif generate_missing:
                 vectorized.append(np.random.rand(k))
         
@@ -99,15 +102,15 @@ class Recommender:
         else:
             return np.zeros(k)
 
-    def recommend_news_based_on_keyword(self, keyword, vectors):
+    def recommend_news_based_on_keyword(self, keyword):
         keyword = keyword.split()
-        keyword = self.get_average_word2vec(keyword, vectors)
+        keyword = self.get_average_word2vec(keyword, self.vectors)
         
         # Calculate vectors for title
         # cut down the title into lists of words before applying the get_average_word2vec functio
-        self.data['title_vector'] = self.data['title'].apply(lambda x: self.get_average_word2vec(x.split(), vectors))
-        self.data['short_desc_vector'] = self.data['short_description'].apply(lambda x: self.get_average_word2vec(x.split(), vectors))
-        self.data['desc_vector'] = self.data['description'].apply(lambda x: self.get_average_word2vec(x.split(), vectors))
+        self.data['title_vector'] = self.data['title'].apply(lambda x: self.get_average_word2vec(x.split(), self.vectors))
+        self.data['short_desc_vector'] = self.data['short_description'].apply(lambda x: self.get_average_word2vec(x.split(), self.vectors))
+        self.data['desc_vector'] = self.data['description'].apply(lambda x: self.get_average_word2vec(x.split(), self.vectors))
 
             # Compute cosine similarity for each title vector
         self.data['title_similarity'] = self.data.apply(lambda row: cosine_similarity([row['title_vector']], [keyword])[0][0], axis=1)
@@ -147,20 +150,31 @@ class Recommender:
             self.data = self.data.sort_values(by=['author_similarity', 'date_created'], ascending=[False, False])
 
         return self.data
-    
-    def recommend_news_based_on_keyword_and_preferences(self, keyword, vectors, user_preferences=None):
-        keyword = keyword.split()
-        keyword = self.get_average_word2vec(keyword, vectors)
-        
+
+    def recommend_news_based_on_keyword_and_preferences(self, user_data):
+        user_keywords = user_data.get('user_keywords', [])
+        user_categories = user_data.get('user_categories', [])
+
+        if not user_keywords:
+            return pd.DataFrame()  # Return an empty DataFrame if no user keywords are provided
+
+        keyword = ' '.join(user_keywords)
+        keyword_vector = self.get_average_word2vec(keyword.split(), self.vectors)
+
         # Calculate vectors for title, short description, and description
-        self.data['title_vector'] = self.data['title'].apply(lambda x: self.get_average_word2vec(x.split(), vectors))
-        self.data['short_desc_vector'] = self.data['short_description'].apply(lambda x: self.get_average_word2vec(x.split(), vectors))
-        self.data['desc_vector'] = self.data['description'].apply(lambda x: self.get_average_word2vec(x.split(), vectors))
+        self.data['title_vector'] = self.data['title'].apply(lambda x: self.get_average_word2vec(x.split(), self.vectors))
+        self.data['short_desc_vector'] = self.data['short_description'].apply(
+            lambda x: self.get_average_word2vec(x.split(), self.vectors))
+        self.data['desc_vector'] = self.data['description'].apply(
+            lambda x: self.get_average_word2vec(x.split(), self.vectors))
 
         # Compute cosine similarity for each feature
-        self.data['title_similarity'] = self.data.apply(lambda row: cosine_similarity([row['title_vector']], [keyword])[0][0], axis=1)
-        self.data['short_desc_similarity'] = self.data.apply(lambda row: cosine_similarity([row['short_desc_vector']], [keyword])[0][0], axis=1)
-        self.data['desc_similarity'] = self.data.apply(lambda row: cosine_similarity([row['desc_vector']], [keyword])[0][0], axis=1)
+        self.data['title_similarity'] = self.data.apply(
+            lambda row: cosine_similarity([row['title_vector']], [keyword_vector])[0][0], axis=1)
+        self.data['short_desc_similarity'] = self.data.apply(
+            lambda row: cosine_similarity([row['short_desc_vector']], [keyword_vector])[0][0], axis=1)
+        self.data['desc_similarity'] = self.data.apply(
+            lambda row: cosine_similarity([row['desc_vector']], [keyword_vector])[0][0], axis=1)
 
         # Combine similarities with weights
         title_weight = 0.7
@@ -168,24 +182,23 @@ class Recommender:
         desc_weight = 0.1
 
         self.data['combined_similarity'] = (title_weight * self.data['title_similarity'] +
-                                    short_desc_weight * self.data['short_desc_similarity'] +
-                                    desc_weight * self.data['desc_similarity'])
+                                            short_desc_weight * self.data['short_desc_similarity'] +
+                                            desc_weight * self.data['desc_similarity'])
 
         # Sort by combined similarity
         self.data = self.data.sort_values(by='combined_similarity', ascending=False)
-        
+
         # Prioritize articles based on user preferences for categories
-        if user_preferences: # 
-            category_weights = user_preferences
+        if user_categories:
+            category_weights = user_categories
             category_max_score = max(category_weights.values(), key=lambda x: x['score'])['score']
             for category, weight_info in category_weights.items():
                 weight = weight_info['score']
                 self.data.loc[self.data['category'] == category, 'combined_similarity'] *= (weight / category_max_score)
 
-        
         # Sort again by adjusted combined similarity
         self.data = self.data.sort_values(by='combined_similarity', ascending=False)
-        
+
         return self.data
 
     def recommend_news_based_on_keywords_and_preferences(self, vectors, user_preferences=None):
@@ -193,7 +206,7 @@ class Recommender:
         self.data['combined_similarity'] = 0.0
         
         # Iterate through each keyword and its score
-        for keyword, score_info in self.keywords.items():
+        for keyword, score_info in self.user_keywords.items():
             score = score_info['score']
             # Calculate average word2vec representation for the keyword
             keyword_vec = self.get_average_word2vec(keyword.split(), vectors)
