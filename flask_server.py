@@ -3,8 +3,10 @@ from firebase_admin import credentials
 from flask import Flask, request, jsonify
 from firebase_admin import firestore
 import recommender as Recommender
+import numpy as np
+import pandas as pd
 
-cred = credentials.Certificate("private/cs7is5-teamhera-firebase-adminsdk-sa9b4-8a9cc23951.json")
+cred = credentials.Certificate("private/cs7is5-teamhera-firebase-adminsdk-sa9b4-ff4a9b855d.json")
 firebase_admin.initialize_app(cred)
 
 app = Flask(__name__)
@@ -79,17 +81,39 @@ def personalized_news():
         print("Getting personalised news")
         recommended_news = get_users_personalised_articles_based_on_keyword_and_preferences(user=user_data, data=get_documents().json)
 
+        recommended_news = convert_to_serializable(recommended_news)
+
+        # return the recommended news
         return jsonify(recommended_news)
 
+def convert_to_serializable(obj):
 
+    # if DataFrame
+    if isinstance(obj, pd.DataFrame):
+        obj.columns = obj.columns.str.lower()
+        return obj.to_dict(orient='records')
+
+    try:
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, dict):
+            return {key: convert_to_serializable(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_to_serializable(item) for item in obj]
+        else:
+            return obj
+    except Exception as e:
+        print("Error converting to serializable format:", e)
+        return None
 
 def get_users_personalised_articles_based_on_keyword_and_preferences(user, data):
-    # Create a recommender object
-    recommender = Recommender.Recommender(json_data=data, user=user)
+    # load data to recommender and user
+    recommender.load_data(data)
+    recommender.load_user(user)
 
     # Call the method for recommending news
     print("Returning recommended news")
-    return recommender.recommend_news_based_on_keyword_and_preferences(user)
+    return recommender.recommend_news_based_on_keyword_and_preferences()
 
 # Add data to database
 @app.route('/add_data', methods=['POST'])
@@ -100,8 +124,29 @@ def add_data():
         db.collection('documents').add(data)
         return jsonify({"message": "success"})
 
+
+
+
+
 if __name__ == '__main__':
+    print("Creating recommender object")
+    recommender = Recommender.Recommender()
+
+    print("Loading glove model")
+    recommender.load_glove_model("gloves/converted_vectors300.txt")
+    print("Loaded glove model")
+
+    print("Starting flask server")
     app.run(debug=True, host='localhost', port=5000)
+
+
+
+
+
+
+
+
+
 
 # user data that is stored in the firestore databse:
 
